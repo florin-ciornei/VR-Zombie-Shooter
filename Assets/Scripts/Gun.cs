@@ -8,6 +8,9 @@ public class Gun : MonoBehaviour
     public bool right;
     public GameObject flash;
     public float flashDuration = 0.15f, shootCooldownSeconds = 0.4f;
+    public LineRenderer tracerLine;
+    public float tracerLineMaxLength = 200;
+    public Transform tracerLineStartPoint;
 
     // Update is called once per frame
     void Update()
@@ -24,11 +27,18 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
+
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+#endif
     }
 
     private bool canShoot = true;
 
-    void Shoot()
+    private void Shoot()
     {
         if (!canShoot)
             return;
@@ -36,7 +46,15 @@ public class Gun : MonoBehaviour
             Mathf.Infinity))
         {
             if (hit.collider.gameObject.CompareTag("Target"))
+            {
                 Destroy(hit.collider.gameObject);
+            }
+
+            StartCoroutine(DrawTraceLine(hit.point));
+        }
+        else
+        {
+            StartCoroutine(DrawTraceLine(transform.forward * tracerLineMaxLength));
         }
 
         canShoot = false;
@@ -53,5 +71,14 @@ public class Gun : MonoBehaviour
     void EnableCanShoot()
     {
         canShoot = true;
+    }
+
+    IEnumerator DrawTraceLine(Vector3 targetPos)
+    {
+        tracerLine.gameObject.SetActive(true);
+        tracerLine.SetPosition(0, tracerLineStartPoint.position);
+        tracerLine.SetPosition(1, targetPos);
+        yield return new WaitForSeconds(flashDuration);
+        tracerLine.gameObject.SetActive(false);
     }
 }
