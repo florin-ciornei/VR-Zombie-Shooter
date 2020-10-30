@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     public LineRenderer tracerLine;
     public float tracerLineMaxLength = 200;
     public Transform tracerLineStartPoint;
+    public int attackDamage = 25;
 
     // Update is called once per frame
     void Update()
@@ -47,7 +48,7 @@ public class Gun : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Target"))
             {
-                Destroy(hit.collider.gameObject);
+                hit.collider.gameObject.GetComponent<Zombie>().TakeDamage(attackDamage);
             }
 
             StartCoroutine(DrawTraceLine(hit.point));
