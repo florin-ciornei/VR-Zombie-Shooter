@@ -83,12 +83,8 @@ public class Zombie : MonoBehaviour
     private void Attack()
     {
         timer = 0;
-        if (playerHealth.health > 0)
-        {
-            animator.SetTrigger("Attack");
-            playerHealth.TakeDamage(attackDamage);
-        }
-
+        animator.SetTrigger("Attack");
+        playerHealth.TakeDamage(attackDamage);
     }
 
     private void Death()

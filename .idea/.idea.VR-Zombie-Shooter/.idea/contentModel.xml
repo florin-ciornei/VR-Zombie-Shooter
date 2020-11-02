@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\micha\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\micha\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_VR-Zombie-Shooter.-672351019.00" t="ExcludeRecursive" />
-    <e p="C:\Users\micha\Desktop\VR-Zombie-Shooter" t="IncludeRecursive">
+    <e p="C:\Users\milic\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\milic\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_VR-Zombie-Shooter.1356234014.00" t="ExcludeRecursive" />
+    <e p="C:\Users\milic\Desktop\Development\VR-Zombie-Shooter" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -770,7 +770,11 @@
         <e p="Scripts" t="Include">
           <e p="AudioManager.cs" t="Include" />
           <e p="Gun.cs" t="Include" />
+          <e p="HealthIndicator.cs" t="Include" />
+          <e p="PlayerHealth.cs" t="Include" />
           <e p="Sound.cs" t="Include" />
+          <e p="Zombie.cs" t="Include" />
+          <e p="ZombieManager.cs" t="Include" />
         </e>
         <e p="SimpleFX" t="Include">
           <e p="Materials" t="Include">
