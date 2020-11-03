@@ -1767,7 +1767,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.85
+  m_Radius: 1
   m_Center: {x: 0, y: 1.36, z: 0}
 --- !u!195 &443844558249273516
 NavMeshAgent:
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  animator: {fileID: 0}
+  animator: {fileID: 7389507112651452681}
   timeBetweenAttacks: 5
   attackDamage: 10
 --- !u!1 &4710940672626480558

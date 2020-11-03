@@ -9,16 +9,15 @@ public class Zombie : MonoBehaviour
     [SerializeField]
     private int health = 100;
     [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private float timeBetweenAttacks;
+    private float timeBetweenAttacks = 5;
     [SerializeField]
     private int attackDamage = 10;
     
+    private Animator animator;
     private NavMeshAgent nav;
     private GameObject playerObject;
     private PlayerHealth playerHealth;
-    private float timer;
+    private float timer = 0;
     private bool isPlayerInRange;
     private CapsuleCollider capsuleCollider;
     private bool isDead;
